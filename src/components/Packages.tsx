@@ -33,19 +33,21 @@ const packages = [
 
 export default function Packages() {
   return (
-    <section id="packages" className="py-24 bg-gray-50/50">
+    <section id="packages" className="py-24 bg-gray-50/30 border-b border-gray-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div className="max-w-2xl">
-            <h2 className="text-sm font-bold text-blue-600 uppercase tracking-widest mb-3 text-center md:text-left">Trending Tours</h2>
-            <p className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight text-center md:text-left">
+          <div className="max-w-2xl text-center md:text-left">
+            <div className="flex justify-center md:justify-start mb-3">
+              <span className="text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">Trending Tours</span>
+            </div>
+            <p className="text-4xl md:text-5xl font-black text-gray-900 mb-6 tracking-tight text-center md:text-left font-display">
               Featured Holiday Packages
             </p>
-            <p className="text-lg text-gray-600 text-center md:text-left">
-              Handpicked destinations with all-inclusive services for an unforgettable vacation experience.
+            <p className="text-lg text-gray-600 text-center md:text-left leading-relaxed">
+              Handpicked destinations with premium accommodations and all-inclusive local support for an unforgettable vacation.
             </p>
           </div>
-          <button className="hidden md:block border-2 border-gray-200 text-gray-900 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-all">
+          <button className="hidden md:block border border-gray-200 text-gray-800 bg-white shadow-sm px-8 py-3.5 rounded-full font-bold hover:bg-gray-50 hover:border-gray-300 transition-all cursor-pointer">
             View All Packages
           </button>
         </div>
@@ -54,44 +56,44 @@ export default function Packages() {
           {packages.map((pkg, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-white rounded-[2rem] overflow-hidden shadow-xl shadow-gray-200/50 border border-gray-100 group"
+              transition={{ delay: i * 0.08, duration: 0.5 }}
+              className="bg-white rounded-[2.5rem] overflow-hidden shadow-xl shadow-gray-100/70 border border-gray-200/60 group hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-blue-600/5 transition-all duration-300"
             >
               <div className="relative h-72 overflow-hidden">
                 <img 
                   src={pkg.image} 
                   alt={pkg.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-md px-4 py-1 rounded-full text-blue-600 font-bold text-sm shadow-sm">
+                <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full text-blue-600 font-extrabold text-sm shadow-md border border-gray-100">
                   {pkg.price}
                 </div>
               </div>
               <div className="p-8">
                 <div className="flex items-center gap-2 mb-4">
-                  <div className="flex items-center text-yellow-400">
+                  <div className="flex items-center text-amber-500">
                     <Star size={16} fill="currentColor" />
-                    <span className="ml-1 text-gray-900 font-bold">{pkg.rating}</span>
+                    <span className="ml-1 text-gray-900 font-bold text-sm">{pkg.rating}</span>
                   </div>
-                  <span className="text-gray-400 text-sm">({pkg.reviews} Reviews)</span>
+                  <span className="text-gray-400 text-xs">({pkg.reviews} Reviews)</span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">{pkg.title}</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors tracking-tight font-display">{pkg.title}</h3>
                 
                 <div className="space-y-3 mb-8">
-                  <div className="flex items-center gap-3 text-gray-500">
-                    <MapPin size={18} className="text-blue-500" />
+                  <div className="flex items-center gap-3 text-gray-500 text-sm font-medium">
+                    <MapPin size={16} className="text-blue-500" />
                     <span>{pkg.location}</span>
                   </div>
-                  <div className="flex items-center gap-3 text-gray-500">
-                    <Clock size={18} className="text-blue-500" />
+                  <div className="flex items-center gap-3 text-gray-500 text-sm font-medium">
+                    <Clock size={16} className="text-blue-500" />
                     <span>{pkg.duration}</span>
                   </div>
                 </div>
 
-                <button className="w-full bg-blue-50 text-blue-600 font-bold py-4 rounded-2xl hover:bg-blue-600 hover:text-white transition-all">
+                <button className="w-full bg-blue-50 text-blue-600 font-bold py-4 rounded-2xl hover:bg-blue-600 hover:text-white transition-all cursor-pointer shadow-sm">
                   Check Details
                 </button>
               </div>
@@ -100,7 +102,7 @@ export default function Packages() {
         </div>
         
         <div className="mt-12 md:hidden">
-          <button className="w-full border-2 border-gray-200 text-gray-900 px-8 py-4 rounded-2xl font-bold hover:bg-gray-100 transition-all">
+          <button className="w-full border border-gray-200 text-gray-800 bg-white shadow-sm px-8 py-4 rounded-full font-bold hover:bg-gray-50 transition-all">
             View All Packages
           </button>
         </div>

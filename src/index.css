@@ -6,3 +6,5 @@
   --font-display: "Outfit", sans-serif;
 }
 
+@variant dark (&:where(.dark, .dark *));
+

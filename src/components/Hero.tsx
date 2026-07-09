@@ -3,7 +3,7 @@ import { ArrowRight, Search } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen pt-20 flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center transition-transform duration-1000"
@@ -29,12 +29,20 @@ export default function Hero() {
             Your trusted partner for Indian visa applications. We specialize in fast-track medical, tourist, and business visas with expert documentation support.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="w-full sm:w-auto bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-700 transition-all flex items-center justify-center gap-2 group shadow-xl shadow-blue-600/30">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+            <a 
+              href="#services" 
+              className="w-full sm:w-auto bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-700 transition-all flex items-center justify-center gap-2 group shadow-xl shadow-blue-600/30"
+            >
               Explore Services
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </button>
-            <a href="https://wa.me/8801332601510" target="_blank" rel="noreferrer" className="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-2 shadow-lg">
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+            </a>
+            <a 
+              href="https://wa.me/8801332601510" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white border border-white/25 px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-2 shadow-lg text-center"
+            >
               WhatsApp Support
             </a>
           </div>
