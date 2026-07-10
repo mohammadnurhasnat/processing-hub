@@ -1,11 +1,24 @@
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send, Facebook, Instagram, Twitter, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Facebook, Instagram, Twitter, CheckCircle, ChevronDown } from 'lucide-react';
 import { useState, FormEvent } from 'react';
+
+const SERVICES_LIST = [
+  'Tourist Visa Support',
+  'Medical Visa Fast-Track',
+  'Double Entry Visa Support',
+  'Business Visa Support',
+  'Visa Documentation Assistance',
+  'Emergency Visa Assistance',
+  'Air Ticketing',
+  'Tour Package',
+  'Others'
+];
 
 export default function Contact() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [service, setService] = useState('Tourist Visa Support');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
@@ -151,27 +164,51 @@ export default function Contact() {
                         />
                       </div>
                     </div>
-                    <div className="space-y-1.5">
+                     <div className="space-y-1.5 relative">
                       <label className="text-xs font-bold text-gray-700 uppercase tracking-wider">Service Type</label>
                       <div className="relative">
-                        <select 
-                          value={service}
-                          onChange={(e) => setService(e.target.value)}
-                          className="w-full px-4 py-3 rounded-xl bg-gray-50/80 border border-gray-200 focus:border-blue-500 focus:bg-white text-gray-950 focus:ring-4 focus:ring-blue-500/10 transition-all outline-none appearance-none text-sm font-medium"
+                        <button
+                          type="button"
+                          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                          className="w-full px-4 py-3 rounded-xl bg-gray-50/80 border border-gray-200 focus:border-blue-500 focus:bg-white text-gray-950 focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-sm font-semibold flex justify-between items-center cursor-pointer shadow-sm min-h-[48px]"
                         >
-                          <option>Tourist Visa Support</option>
-                          <option>Medical Visa Fast-Track</option>
-                          <option>Double Entry Visa Support</option>
-                          <option>Business Visa Support</option>
-                          <option>Visa Documentation Assistance</option>
-                          <option>Emergency Visa Assistance</option>
-                          <option>Air Ticketing</option>
-                          <option>Tour Package</option>
-                          <option>Others</option>
-                        </select>
-                        <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-400">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
-                        </div>
+                          <span>{service}</span>
+                          <ChevronDown size={18} className={`text-gray-500 transition-transform duration-200 shrink-0 ml-2 ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                        </button>
+
+                        {isDropdownOpen && (
+                          <>
+                            {/* Overlay backdrop to handle click-outside closing */}
+                            <div 
+                              className="fixed inset-0 z-40 bg-transparent" 
+                              onClick={() => setIsDropdownOpen(false)}
+                            />
+                            
+                            {/* Dropdown list container */}
+                            <div className="absolute left-0 right-0 mt-2 bg-white border border-gray-200 rounded-2xl shadow-xl z-50 overflow-hidden py-1 max-h-60 overflow-y-auto animate-in fade-in slide-in-from-top-1 duration-150">
+                              {SERVICES_LIST.map((option) => (
+                                <button
+                                  key={option}
+                                  type="button"
+                                  onClick={() => {
+                                    setService(option);
+                                    setIsDropdownOpen(false);
+                                  }}
+                                  className={`w-full px-4 py-2.5 text-left text-sm font-medium transition-colors flex items-center justify-between cursor-pointer ${
+                                    service === option
+                                      ? 'bg-blue-50 text-blue-600'
+                                      : 'text-gray-700 hover:bg-gray-50'
+                                  }`}
+                                >
+                                  <span>{option}</span>
+                                  {service === option && (
+                                    <span className="w-2 h-2 rounded-full bg-blue-600 shrink-0" />
+                                  )}
+                                </button>
+                              ))}
+                            </div>
+                          </>
+                        )}
                       </div>
                     </div>
                     <div className="space-y-1.5">

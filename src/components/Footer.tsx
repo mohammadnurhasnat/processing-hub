@@ -37,14 +37,14 @@ export default function Footer() {
         </div>
 
         {/* Middle Section: Visa Services (BAM PASE) & Contact Details (DAN PASE) Side by Side */}
-        <div className="grid grid-cols-2 gap-6 sm:gap-12 md:gap-16 lg:gap-24 mb-8">
+        <div className="grid grid-cols-2 gap-6 sm:gap-12 md:gap-16 lg:gap-24 mb-10">
           
           {/* BAM PASE: Visa Services */}
-          <div className="space-y-3">
-            <h4 className="text-gray-900 font-extrabold uppercase tracking-widest text-xs sm:text-sm border-b border-gray-200 pb-2">
+          <div className="space-y-4">
+            <h4 className="text-gray-900 font-black uppercase tracking-wider text-sm sm:text-base border-b border-gray-200 pb-2.5 font-display">
               Visa Services
             </h4>
-            <ul className="space-y-1.5 text-xs sm:text-sm md:text-base text-gray-600">
+            <ul className="space-y-2 text-sm sm:text-base text-gray-700">
               <li>
                 <a href="#services" className="hover:text-blue-600 transition-colors py-0.5 block font-medium">
                   Tourist Visa Support
@@ -69,28 +69,28 @@ export default function Footer() {
           </div>
 
           {/* DAN PASE: Contact Details */}
-          <div className="space-y-3">
-            <h4 className="text-gray-900 font-extrabold uppercase tracking-widest text-xs sm:text-sm border-b border-gray-200 pb-2">
+          <div className="space-y-4">
+            <h4 className="text-gray-900 font-black uppercase tracking-wider text-sm sm:text-base border-b border-gray-200 pb-2.5 font-display">
               Contact Details
             </h4>
-            <ul className="space-y-1.5 text-xs sm:text-sm md:text-base text-gray-600 leading-normal">
-              <li className="flex flex-col sm:flex-row sm:items-start gap-0.5 sm:gap-2">
-                <span className="font-bold text-gray-900 sm:min-w-[80px]">Phone:</span> 
-                <span className="text-gray-700 font-medium">+09643848934</span>
+            <ul className="space-y-2.5 text-sm sm:text-base text-gray-700 leading-relaxed">
+              <li className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2.5">
+                <span className="font-bold text-gray-950 sm:min-w-[90px] shrink-0">Phone:</span> 
+                <span className="text-gray-700 font-semibold">+09643848934</span>
               </li>
-              <li className="flex flex-col sm:flex-row sm:items-start gap-0.5 sm:gap-2">
-                <span className="font-bold text-gray-900 sm:min-w-[80px]">WhatsApp:</span> 
-                <a href="https://wa.me/8801332601510" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline font-medium">
+              <li className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2.5">
+                <span className="font-bold text-gray-950 sm:min-w-[90px] shrink-0">WhatsApp:</span> 
+                <a href="https://wa.me/8801332601510" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline font-semibold">
                   +8801332601510
                 </a>
               </li>
-              <li className="flex flex-col sm:flex-row sm:items-start gap-0.5 sm:gap-2">
-                <span className="font-bold text-gray-900 sm:min-w-[80px]">Email:</span> 
+              <li className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2.5">
+                <span className="font-bold text-gray-950 sm:min-w-[90px] shrink-0">Email:</span> 
                 <span className="text-gray-700 font-medium break-all">visaprocessinghub@gmail.com</span>
               </li>
-              <li className="flex flex-col sm:flex-row sm:items-start gap-0.5 sm:gap-2">
-                <span className="font-bold text-gray-900 sm:min-w-[80px]">Location:</span> 
-                <span className="text-gray-700 font-medium leading-snug">Level: 3/A, Jamuna Future Park, Dhaka-1229</span>
+              <li className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2.5">
+                <span className="font-bold text-gray-950 sm:min-w-[90px] shrink-0">Location:</span> 
+                <span className="text-gray-700 font-medium leading-relaxed">Level: 3/A, Jamuna Future Park, Dhaka-1229</span>
               </li>
             </ul>
           </div>
