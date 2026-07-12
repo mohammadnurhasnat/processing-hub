@@ -103,10 +103,36 @@ export default function Services() {
                 />
               )}
               <div className="relative z-10">
+                {service.title === 'Emergency Visa Assistance' && (
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-red-50 text-red-600 mb-3.5 w-fit border border-red-200/60 shadow-sm">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
+                    </span>
+                    <span>24/7 Urgent Support</span>
+                  </div>
+                )}
                 <h3 className="text-2xl font-bold text-gray-900 mb-3 tracking-tight font-display group-hover:text-blue-600 transition-colors duration-300">{service.title}</h3>
                 <p className="text-gray-700 font-medium leading-relaxed mb-4 text-sm mix-blend-multiply">
                   {service.desc}
                 </p>
+
+                {service.title === 'Emergency Visa Assistance' && (
+                  <div className="mt-4 pt-4 border-t border-gray-100 space-y-2.5 text-xs text-gray-700 font-medium leading-relaxed">
+                    <div className="flex items-start gap-2 bg-amber-50/40 p-2.5 rounded-xl border border-amber-100/30">
+                      <span className="text-sm shrink-0">⚡</span>
+                      <span><strong>ইনস্ট্যান্ট রেসপন্স:</strong> ৫ থেকে ১৫ মিনিটের মধ্যে দ্রুত ফিডব্যাক।</span>
+                    </div>
+                    <div className="flex items-start gap-2 bg-amber-50/40 p-2.5 rounded-xl border border-amber-100/30">
+                      <span className="text-sm shrink-0">🩺</span>
+                      <span><strong>মেডিকেল এমার্জেন্সি সাপোর্ট:</strong> হাসপাতাল ইনভাইটেশন ও স্লট প্রসেসিংয়ে বিশেষ অগ্রাধিকার।</span>
+                    </div>
+                    <div className="flex items-start gap-2 bg-amber-50/40 p-2.5 rounded-xl border border-amber-100/30">
+                      <span className="text-sm shrink-0">📄</span>
+                      <span><strong>দ্রুত ডকুমেন্ট স্ক্রীনিং:</strong> কোনো ভুল এড়াতে আমাদের এক্সপার্ট দ্বারা ডকুমেন্টস দ্রুত যাচাই।</span>
+                    </div>
+                  </div>
+                )}
 
                 {service.rates && (
                   <div className="my-4 pt-4 border-t border-gray-200 space-y-2 mix-blend-multiply">
@@ -153,17 +179,45 @@ export default function Services() {
                   </div>
                 )}
               </div>
-              <div className="relative z-10 flex items-center justify-between border-t border-gray-200 pt-4 mt-4 mix-blend-multiply">
-                <div className="flex items-center gap-2 text-blue-700 font-bold text-sm">
-                  <CheckCircle size={16} className="text-blue-600" />
-                  <span>Expert Support</span>
-                </div>
-                <button 
-                  onClick={() => setBookingService(service.title)}
-                  className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded-full transition-colors duration-300 shadow-md cursor-pointer"
-                >
-                  Book Now
-                </button>
+              <div className="relative z-10 flex items-center justify-between border-t border-gray-200 pt-4 mt-4 mix-blend-multiply gap-3">
+                {service.title === 'Emergency Visa Assistance' ? (
+                  <>
+                    <a
+                      href="https://wa.me/8801332601510?text=Hello%2C%20I%20need%20Emergency%20Indian%20Visa%20Assistance."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-[#25D366] hover:bg-[#128C7E] text-white p-2.5 rounded-full transition-colors duration-300 shadow-md flex items-center justify-center cursor-pointer shrink-0"
+                      title="Contact on WhatsApp"
+                    >
+                      <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                      </svg>
+                    </a>
+                    <button 
+                      onClick={() => setBookingService(service.title)}
+                      className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded-full transition-colors duration-300 shadow-md cursor-pointer shrink-0"
+                    >
+                      Book Now
+                    </button>
+                    <div className="flex items-center gap-1.5 text-blue-700 font-bold text-xs shrink-0">
+                      <CheckCircle size={14} className="text-blue-600" />
+                      <span>Expert Support</span>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <button 
+                      onClick={() => setBookingService(service.title)}
+                      className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded-full transition-colors duration-300 shadow-md cursor-pointer shrink-0"
+                    >
+                      Book Now
+                    </button>
+                    <div className="flex items-center gap-1.5 text-blue-700 font-bold text-xs shrink-0">
+                      <CheckCircle size={14} className="text-blue-600" />
+                      <span>Expert Support</span>
+                    </div>
+                  </>
+                )}
               </div>
             </motion.div>
           ))}
