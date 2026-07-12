@@ -59,7 +59,7 @@ const services = [
 
 export default function Services() {
   const [bookingService, setBookingService] = useState<string | null>(null);
-  const [selectedDocCategory, setSelectedDocCategory] = useState<string>('Tourist Visa');
+  const [selectedDocCategory, setSelectedDocCategory] = useState<string | null>(null);
   return (
     <section id="services" className="pt-32 pb-24 md:pt-36 md:pb-28 bg-gradient-to-b from-white to-gray-50/50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -153,10 +153,13 @@ export default function Services() {
                     <div className="space-y-2">
                       {service.docRates.map((rate, idx) => {
                         const isSelected = selectedDocCategory === rate.label;
+                        const handleSelect = () => {
+                          setSelectedDocCategory(prev => prev === rate.label ? null : rate.label);
+                        };
                         return (
                           <div 
                             key={idx} 
-                            onClick={() => setSelectedDocCategory(rate.label)}
+                            onClick={handleSelect}
                             className={`flex justify-between items-center text-xs p-2 rounded-xl border transition-all cursor-pointer ${
                               isSelected ? 'border-orange-400 bg-orange-50/70 font-bold shadow-sm shadow-orange-500/5' : 'border-gray-100 hover:bg-gray-50/80'
                             }`}
@@ -165,7 +168,7 @@ export default function Services() {
                               <input 
                                 type="checkbox"
                                 checked={isSelected}
-                                onChange={() => setSelectedDocCategory(rate.label)}
+                                onChange={handleSelect}
                                 onClick={(e) => e.stopPropagation()}
                                 className="h-3.5 w-3.5 rounded border-gray-300 text-orange-600 focus:ring-orange-500 cursor-pointer"
                               />
@@ -207,8 +210,16 @@ export default function Services() {
                 ) : (
                   <>
                     <button 
-                      onClick={() => setBookingService(service.title)}
-                      className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded-full transition-colors duration-300 shadow-md cursor-pointer shrink-0"
+                      onClick={() => {
+                        if (service.title === 'Visa Documentation' && !selectedDocCategory) return;
+                        setBookingService(service.title);
+                      }}
+                      disabled={service.title === 'Visa Documentation' && !selectedDocCategory}
+                      className={`text-xs font-bold py-2 px-4 rounded-full transition-all duration-300 shadow-md shrink-0 ${
+                        service.title === 'Visa Documentation' && !selectedDocCategory
+                          ? 'bg-gray-300 text-gray-500 cursor-not-allowed opacity-60 shadow-none'
+                          : 'bg-blue-600 hover:bg-blue-700 text-white cursor-pointer'
+                      }`}
                     >
                       Book Now
                     </button>

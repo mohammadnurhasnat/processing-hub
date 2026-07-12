@@ -116,8 +116,8 @@ export default function Navbar({ onOpenAdmin }: NavbarProps) {
               Admin Panel
             </button>
             
-            <a href="tel:+8801332601510" className="bg-blue-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition-all flex items-center gap-2 shadow-lg shadow-blue-600/15 text-sm ml-2">
-              <PhoneCall size={16} />
+            <a href="tel:+8801332601510" className="bg-blue-600 text-white px-4 py-2 md:px-5 md:py-2.5 rounded-full font-semibold hover:bg-blue-700 transition-all flex items-center gap-2 shadow-lg shadow-blue-600/15 text-xs md:text-sm ml-2">
+              <PhoneCall size={14} className="md:w-4 md:h-4" />
               Call Support
             </a>
           </div>
@@ -185,9 +185,9 @@ export default function Navbar({ onOpenAdmin }: NavbarProps) {
                   transition={{ delay: 0.2 + navLinks.length * 0.05, duration: 0.3 }}
                   href="tel:+8801332601510" 
                   onClick={() => setIsOpen(false)} 
-                  className="bg-[#25D366] hover:bg-[#128C7E] text-white px-8 py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20 w-full max-w-[240px] mt-6"
+                  className="bg-[#25D366] hover:bg-[#128C7E] text-white px-6 py-2.5 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20 w-full max-w-[240px] mt-6 text-sm"
                 >
-                  <PhoneCall size={18} />
+                  <PhoneCall size={16} />
                   Call Support
                 </motion.a>
               </div>

@@ -61,16 +61,16 @@ export default function Hero() {
             >
               <a 
                 href="#services" 
-                className="w-full sm:w-auto bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-base hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/20 transition-all flex items-center justify-center gap-2 group cursor-pointer shadow-md"
+                className="w-full sm:w-auto bg-blue-600 text-white px-5 py-2.5 sm:px-8 sm:py-3 rounded-xl font-bold text-sm sm:text-base hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/20 transition-all flex items-center justify-center gap-2 group cursor-pointer shadow-md"
               >
                 Explore Services
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
+                <ArrowRight className="group-hover:translate-x-1 transition-transform w-4 h-4 sm:w-[18px] sm:h-[18px]" size={18} />
               </a>
               <a 
                 href="https://wa.me/8801332601510" 
                 target="_blank" 
                 rel="noreferrer" 
-                className="w-full sm:w-auto bg-[#25D366] text-white px-8 py-4 rounded-2xl font-bold text-base hover:bg-[#128C7E] transition-all flex items-center justify-center gap-2 shadow-sm text-center cursor-pointer"
+                className="w-full sm:w-auto bg-[#25D366] text-white px-5 py-2.5 sm:px-8 sm:py-3 rounded-xl font-bold text-sm sm:text-base hover:bg-[#128C7E] transition-all flex items-center justify-center gap-2 shadow-sm text-center cursor-pointer"
               >
                 WhatsApp Support
               </a>

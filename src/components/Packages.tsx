@@ -47,9 +47,7 @@ export default function Packages() {
               Handpicked destinations with premium accommodations and all-inclusive local support for an unforgettable vacation.
             </p>
           </div>
-          <button className="hidden md:block border border-gray-200 text-gray-800 bg-white shadow-sm px-8 py-3.5 rounded-full font-bold hover:bg-gray-50 hover:border-gray-300 transition-all cursor-pointer">
-            View All Packages
-          </button>
+          
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -93,7 +91,7 @@ export default function Packages() {
                   </div>
                 </div>
 
-                <button className="w-full bg-blue-50 text-blue-600 font-bold py-4 rounded-[10px] hover:bg-blue-600 hover:text-white transition-all cursor-pointer shadow-sm">
+                <button className="w-full bg-blue-50 text-blue-600 font-bold py-2.5 md:py-3 rounded-[10px] hover:bg-blue-600 hover:text-white transition-all cursor-pointer shadow-sm text-xs md:text-sm">
                   Check Details
                 </button>
               </div>
@@ -101,11 +99,6 @@ export default function Packages() {
           ))}
         </div>
         
-        <div className="mt-12 md:hidden">
-          <button className="w-full border border-gray-200 text-gray-800 bg-white shadow-sm px-8 py-4 rounded-full font-bold hover:bg-gray-50 transition-all">
-            View All Packages
-          </button>
-        </div>
       </div>
     </section>
   );

@@ -224,10 +224,10 @@ export default function Contact() {
                     <button 
                       type="submit"
                       disabled={status === 'loading'}
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-blue-600/20 hover:shadow-blue-600/35 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75 hover:scale-[1.01]"
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 md:py-3 rounded-xl transition-all shadow-lg shadow-blue-600/20 hover:shadow-blue-600/35 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75 hover:scale-[1.01] text-xs md:text-sm"
                     >
                       {status === 'loading' ? 'Sending...' : 'Send Message'}
-                      <Send size={16} />
+                      <Send size={14} className="md:w-4 md:h-4" />
                     </button>
                     {status === 'error' && (
                       <p className="text-sm text-red-500 font-semibold text-center mt-2">Failed to send message. Please check internet connection.</p>
